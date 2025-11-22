@@ -36,10 +36,22 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div id="page1" class="container">
     <h1>Welcome to My Website</h1>
     <p>This site is hosted on GitHub Pages.</p>
-    <a href="#" class="button">Click Me</a>
+    <a onclick="goToPage(2)" class="button" style="cursor:pointer;">Go to Page 2</a>
   </div>
+
+  <div id="page2" class="container" style="display:none;">
+    <h1>Second Page</h1>
+    <p>You clicked the button and arrived on Page 2!</p>
+    <a onclick="goToPage(1)" class="button" style="cursor:pointer;">Back to Home</a>
+  </div>
+  <script>
+    function goToPage(page) {
+      document.getElementById('page1').style.display = page === 1 ? 'block' : 'none';
+      document.getElementById('page2').style.display = page === 2 ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
